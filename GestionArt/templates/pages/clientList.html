@@ -1,0 +1,199 @@
+ 
+{% extends "pages/base.html" %}
+
+{% block title %}GestionArt - Arte en Gestion{% endblock %}
+ 
+ {% block content %}
+			<!-- Search -->	
+            <div class="row">
+                <div class="col-lg-9">
+                    <!-- <h1 class="page-header">Dashboard</h1> -->
+                    <ul class="my-page-header nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" onclick="tables.html">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+		</br>
+		 <div class="row">
+                <div class="col-lg-11 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row" >
+                                <div class="col-xs-2">
+									<div class="col-xs-12">
+										<i class="glyphicon glyphicon-search fa-3x" id="iconTareas"></i>
+									</div>	
+                                </div>
+								<div id= 'estadoTareas' class="col-xs-7"> 
+									<h1>Lista de Clientes</h1> 
+									
+								</div>
+                                <div class="col-xs-3 text-right">
+                                    <div class="huge">26</div>
+                                    <div id="filtroTareas">Tareas Mostradas!</div>
+                                </div>
+                            </div>
+                        </div>
+						<div class="panel-body">
+						 <!-- Table -->
+							<table class="table table-hover" id="tablaTareas" .pagination>
+								<thead>
+									<td><strong>Cliente</strong></td>
+									<td><strong>Vehiculo</strong></td>
+									<td><strong>Matricula</strong></td>								
+									<td><strong>Tarea</strong></td>
+									<td><strong>Estado</strong></td>
+									<td><strong>Descripcion</strong></td>
+									<td><strong>Responsable</strong></td>
+								</thead>
+								<tbody>
+									<tr class='clickable-row' data-href='/clientProfile/'>
+										<td><strong>Juan</strong></td>
+										<td><strong>Auto</strong></td>
+										<td><strong>MAG 1122</strong></td>
+										<td><strong>Tarea 1</strong></td>
+										<td><strong>En Progreso</strong></td>
+										<td><strong>Descripcion 1</strong></td>
+										<td><strong>Responsable 1</strong></td>
+									</tr>
+									<tr>
+										<td><strong>Federica</strong></td>
+										<td><strong>Auto</strong></td>
+										<td><strong>MAG 4355</strong></td>
+										<td><strong>Tarea 11</strong></td>
+										<td><strong>Pendiente</strong></td>
+										<td><strong>Descripcion 1</strong></td>
+										<td><strong>Responsable 2</strong></td>
+									</tr>
+									<tr>
+										<td><strong>Julio</strong></td>
+										<td><strong>Moto</strong></td>
+										<td><strong>MKJ 2597</strong></td>
+										<td><strong>Tarea 3</strong></td>
+										<td><strong>En Progreso</strong></td>
+										<td><strong>Descripcion 1</strong></td>
+										<td><strong>Responsable 1</strong></td>
+									</tr>
+									<tr>
+										<td><strong>Juliana</strong></td>
+										<td><strong>Auto</strong></td>
+										<td><strong>HIG 3421</strong></td>
+										<td><strong>Tarea 3</strong></td>
+										<td><strong>En Progreso</strong></td>
+										<td><strong>Descripcion XXX</strong></td>
+										<td><strong>Responsable 1</strong></td>
+									</tr>
+									<tr>
+										<td><strong>Francesca</strong></td>
+										<td><strong>Moto</strong></td>
+										<td><strong>LMA 5497</strong></td>
+										<td><strong>Tarea 3</strong></td>
+										<td><strong>Pendiente</strong></td>
+										<td><strong>Descripcion XXXX</strong></td>
+										<td><strong>Responsable 1</strong></td>
+									</tr>
+									<tr>
+										<td><strong>Julio</strong></td>
+										<td><strong>Auto</strong></td>
+										<td><strong>AAK 2252</strong></td>
+										<td><strong>Tarea 3</strong></td>
+										<td><strong>Finalizada</strong></td>
+										<td><strong>Descripcion XXX</strong></td>
+										<td><strong>Responsable 2</strong></td>
+									</tr>
+									<tr>
+										<td><strong>Julio</strong></td>
+										<td><strong>Moto</strong></td>
+										<td><strong>MKJ 2597</strong></td>
+										<td><strong>Tarea 3</strong></td>
+										<td><strong>En Progreso</strong></td>
+										<td><strong>Descripcion 1</strong></td>
+										<td><strong>Responsable 1</strong></td>
+									</tr>
+									<tr>
+										<td><strong>Homero</strong></td>
+										<td><strong>Moto</strong></td>
+										<td><strong>KKL 1458</strong></td>
+										<td><strong>Tarea 3</strong></td>
+										<td><strong>Finalizada</strong></td>
+										<td><strong>Descripcion 1</strong></td>
+										<td><strong>Responsable 1</strong></td>
+									</tr>
+										<tr>
+										<td><strong>Carolina</strong></td>
+										<td><strong>AUTO</strong></td>
+										<td><strong>JKK 3341</strong></td>
+										<td><strong>Tarea 7</strong></td>
+										<td><strong>Pendiente</strong></td>
+										<td><strong>Descripcion 1</strong></td>
+										<td><strong>Responsable 1</strong></td>
+									</tr>
+									<tr>
+										<td><strong>Jorge</strong></td>
+										<td><strong>Auto</strong></td>
+										<td><strong>SBA 1252</strong></td>
+										<td><strong>Tarea 1</strong></td>
+										<td><strong>En Progreso</strong></td>
+										<td><strong>Descripcion 1</strong></td>
+										<td><strong>Responsable 1</strong></td>
+									</tr>
+										<tr>
+										<td><strong>Mariana</strong></td>
+										<td><strong>Moto</strong></td>
+										<td><strong>JKK 597</strong></td>
+										<td><strong>Tarea 1</strong></td>
+										<td><strong>En Progreso</strong></td>
+										<td><strong>Descripcion 5</strong></td>
+										<td><strong>Responsable 2</strong></td>
+									</tr>
+								</tbody>
+						  </table>
+						</div>
+                    </div>
+                </div>
+				<div class="col-lg-1 col-md-1">
+				 <a href="/newClient/" class="button btn btn-success btn-block glyphicon glyphicon-plus"></a>
+					
+					</button>	
+					
+				</div>
+				</div>
+		<div class="col-lg-9 col-md-6">
+			<div class="panel panel-default">
+			  <!-- Default panel contents -->
+			  <div class="panel-heading">Panel heading</div>
+
+			  <!-- Table -->
+			  <table class="table">
+				...
+			  </table>
+			</div>
+			</div>
+	{% endblock %}
+
+
+{% block encabezado %}
+<script type="text/javascript">
+    $(function () {
+        $("#tablaTareas").DataTable();
+    });
+    
+    jQuery(document).ready(function($) {
+        $(".clickable-row").click(function() {
+            window.location = $(this).data("href");
+        });
+    });
+</script>
+{% endblock %}

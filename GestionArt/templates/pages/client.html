@@ -1,0 +1,118 @@
+ 
+{% extends "pages/base.html" %}
+
+{% block title %}GestionArt - Arte en Gestion{% endblock %}
+
+
+ {% block content %}
+            <div class="container-fluid">
+                <div class="row" >
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Nuevo Cliente</h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                    <!-- <div class="col-lg-10 col-lg-offset-1 spa-top-lg bg-white well"> -->
+                    <div class="col-lg-10 bg-white">
+                        <form>
+                            <div class="row spa-bot-lg" >
+                            <!-- <div class="col-lg-offset-2 col-lg-8"> -->
+                                <div class="col-lg-8 ">
+                                    <div class="row">
+                                        <div class="form-group form-group-lg col-lg-6">
+                                          <label for="nombre" class="text-semibold">Nombre</label>
+                                          <input type="text" class="form-control" id="nombre">
+                                        </div>
+                                        <div class="form-group form-group-lg col-lg-6">
+                                          <label for="apellido" class="text-semibold">Apellido</label>
+                                          <input type="text" class="form-control" id="apellido">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                   	 	<div class="form-group form-group-lg col-lg-6">
+                                            <label for="telefono" class="text-semibold">C.I</label>
+                                            <input type="text" class="form-control" id="telefono">
+                                        </div>
+                                        <div class="form-group form-group-lg col-lg-6">
+                                            <label for="fechanac" class="text-semibold" >Fecha de Nacimiento</label>
+                                         <input type="date" class="form-control" id="fechanac">
+                                        </div>    
+                                    </div>
+                                     <div class="row">
+                                   	 	<div class="form-group form-group-lg col-lg-6">
+                                            <label for="telefono" class="text-semibold">Celular</label>
+                                            <input type="text" class="form-control" id="telefono">
+                                        </div>
+                                        <div class="form-group form-group-lg col-lg-6">
+                                            <label for="text" class="text-semibold" >Telefono Fijo</label>
+                                         <input type="text" class="form-control" id="fechanac">
+                                        </div>    
+                                    </div>
+                                     <div class="row">
+										<div class="form-group form-group-lg col-lg-6">
+											<div class="spa-bot clearfix">
+												<p>Sexo</p>
+												
+	                                      <select name="origen" id="origen" class="form-control">
+	                                        <option value="Option1">HOMBRE</option>
+	                                        <option value="Option2">MUJER</option>
+	  
+	                                      </select>
+	                                    
+											</div>
+										</div>
+										<div class="form-group form-group-lg col-lg-6">
+											 <label for="fechacreacion" class="text-semibold" >Fecha de Creacion</label>
+	                                         <input type="date" class="form-control" id="fechacreacion">
+	                                    </div>    
+									</div>
+									<div class="row">
+										<div class="form-group form-group-lg col-lg-12">
+											<label for="direccion" class="text-semibold">Direccion</label>
+											<input type="text" class="form-control" id="direccion">
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group form-group-lg col-lg-12">
+											<label for="correo" class="text-semibold">Email</label>
+											<input type="email" class="form-control" id="correo">
+										</div>
+									</div>
+                               
+                               <!-- ###################Aca comienza la tabla ###########################################-->    
+                                 <h5 class="text-center spa-bot double-line"><strong><span>Vehiculos</span></strong></h5>
+                            		
+                                    <div class="panel panel-info">
+									  <div class="panel-heading"> <a><i class="glyphicon glyphicon-road"></i> Vehiculos</a></div>
+									  
+									  <div class="panel-body"><table class="table table-bordered">
+									    <thead>
+									      <tr>
+									        <th>Matricula</th>
+									        <th>Modelo</th>
+									        
+									      </tr>
+									    </thead>
+									    <tbody>
+									      <tr>
+									        <td>Zanella</td>
+									        <td>1999</td>
+									       
+									      </tr>
+									      
+									    </tbody>
+									  </table>
+                                   
+                                    
+                                    
+                                    </div>
+                            </div>
+                        </form>
+                   
+             
+                    <button type="submit" class="btn btn-success btn-block">GUARDAR</button>
+                         </div>          
+                       </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+       {% endblock %}

@@ -1,0 +1,259 @@
+ 
+{% extends "pages/base.html" %}
+
+{% block title %}GestionArt - Arte en Gestion{% endblock %}
+{% block content %}
+<meta charset="utf-8">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-10">
+                        <h1 class="page-header">Perfil Tarea</h1>
+                    </div>
+
+                    <div class="col-lg-10 bg-white">
+                        <form>
+                            <div class="row spa-bot-lg">
+                            <!-- <div class="col-lg-offset-2 col-lg-8"> -->
+                                <div class="col-lg-12">
+                                    <h4 class="text-uppercase"><strong>Informacion del Cliente</strong></h4>
+                                    <div class="row">
+                                        <div class="form-group form-group-lg col-lg-4">
+                                          <label for="nombre" class="text-semibold">Nombre</label>
+                                          <input type="text" class="form-control" id="nombre">
+                                        </div>
+                                        <div class="form-group form-group-lg col-lg-4">
+                                          <label for="apellido" class="text-semibold">Apellido</label>
+                                          <input type="text" class="form-control" id="apellido">
+                                        </div>
+                                        <div class="form-group form-group-lg col-lg-4">                                              
+									        <label for="apellido" class="text-semibold">Matricula Vehiculo</label>
+									        <input type="text" class="form-control" id="Matricula">
+                                        </div>
+                                         
+                                    </div>
+                                    <!--  <div class="row">
+                                        <div class="form-group form-group-lg col-lg-6">
+                                            <label for="fechanac" class="text-semibold">Fecha de Nacimiento</label>
+                                            <input type="text" class="form-control" id="fechanac">
+                                        </div>
+                                        <div class="form-group form-group-lg col-lg-6">
+                                            <label for="telefono" class="text-semibold">Tel�fono</label>
+                                            <input type="text" class="form-control" id="telefono">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group form-group-lg col-lg-6">
+                                            <label for="direccion" class="text-semibold">Direcci�n</label>
+                                            <input type="text" class="form-control" id="direccion">
+                                        </div>
+                                        <div class="form-group form-group-lg col-lg-6">
+                                            <label for="correo" class="text-semibold">Email</label>
+                                            <input type="text" class="form-control" id="correo">
+                                        </div>
+                                    </div>
+                                </div>-->
+                            </div>
+                         
+                        </form>
+                    </div>
+
+                    <!-- borrar-->
+                    <div class="col-lg-12 bg-white">
+                        <div class="bg-white" style="margin-bottom: 20px;">
+                            <h4 class="text-uppercase"><strong>DETALLES</strong></h4>
+                            <h5 class="text-center spa-bot double-line"><strong><span>Trabajos Predefinidos</span></strong></h5>
+                          
+                          
+                           <!--   <div class="row spa-bot">
+                              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                                <div class="form-group form-group-lg row">
+                                  <label class="col-sm-4 control-label spa-top-sm" for="Config1">Config 1:</label>
+                                  <div class="col-sm-6 contador text-md text-bold">
+                                    <input type="button" value="-" onclick="incrementers(this,'#Config1');">
+                                    <input class="form-control text-center" type="text" value="1" id="config1" min="0">
+                                    <input type="button" value="+" onclick="incrementers(this,'#config1');">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                                <div class="form-group form-group-lg row">
+                                  <label class="col-sm-4 control-label spa-top-sm" for="Config2">Config 2:</label>
+                                  <div class="col-sm-offset-1 col-sm-6 contador text-md text-bold">
+                                    <input type="button" value="-" onclick="incrementers(this,'#config2');">
+                                    <input class="form-control text-center" type="text" value="1" id="config2" min="0">
+                                    <input type="button" value="+" onclick="incrementers(this,'#config2');">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                                <div class="form-group form-group-lg row">
+                                  <label class="col-sm-4 control-label spa-top-sm" for="Config3">Config 3:</label>
+                                  <div class="col-sm-offset-1 col-sm-6 contador text-md text-bold">
+                                    <input type="button" value="-" onclick="incrementers(this,'#config3');">
+                                    <input class="form-control text-center" type="text" value="1" id="config3" min="0">
+                                    <input type="button" value="+" onclick="incrementers(this,'#config3');">
+                                  </div>
+                                </div>
+                              </div>
+                            </div> -->
+
+                            <div class="row spa-bot">
+                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="form-group form-group-lg row">
+                                  <label class="col-sm-3 control-label spa-top-sm text-semibold" for="opcion1">Seleccionar:</label>
+                                  <div class="col-sm-6 contador text-md text-bold">
+                                    <div class="form-group">
+                                      <select name="origen" id="origen" class="form-control">
+                                        <option value="Option1">Services</option>
+                                        <option value="Option2">Service 1</option>
+                                        <option value="Option3">Service 2</option>
+                                        <option value="Option4">Service 3</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <div class="form-group form-group-lg row">
+                                  <label class="col-sm-3 control-label spa-top-sm text-semibold" for="banios">Seleccionar:</label>
+                                  <div class="col-sm-offset-1 col-sm-6 contador text-md text-bold">
+                                    <div class="form-group">
+                                      <select name="destino" id="destino" class="form-control">
+                                        <option value="Option1">Opcion 1</option>
+                                        <option value="Option2">Opcion 2</option>
+                                        <option value="Option3">Opcion 3</option>
+                                        <option value="Option4">Opcion 4</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+
+
+
+                            <h5 class="text-center spa-bot double-line"><strong><span>Trabajos</span></strong></h5>
+                            <div class="row">
+                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 spa-bot">
+                                <div class="servicio_extra">
+                                  <input type="checkbox" id="extra_11">
+                                  <label for="extra_11" class="text-center">
+                                    <span class="glyphicon glyphicon-tint"></span>
+                                    Cambio de Aceite
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 spa-bot">
+                                <div class="servicio_extra">
+                                  <input type="checkbox" id="extra_22">
+                                  <label for="extra_22" class="text-center">
+                                    <span class="glyphicon glyphicon-filter"></span>
+                                    Cambio de Filtro de Aceite
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 spa-bot">
+                                <div class="servicio_extra">
+                                  <input type="checkbox" id="extra_33">
+                                  <label for="extra_33" class="text-center">
+                                    <span class="glyphicon glyphicon-cog"></span>
+                                    Ajustar Cadena y Lubricar
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 spa-bot">
+                                <div class="servicio_extra">
+                                  <input type="checkbox" id="extra_44">
+                                  <label for="extra_44" class="text-center">
+                                    <span class="icon-muebles"></span>
+                                    Ajustar Freno Trasero
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 spa-bot">
+                                <div class="servicio_extra">
+                                  <input type="checkbox" id="extra_55">
+                                  <label for="extra_55" class="text-center">
+                                    <span class="icon-muebles"></span>
+                                    Ajustar Freno Trasero
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 spa-bot">
+                                <div class="servicio_extra">
+                                  <input type="checkbox" id="extra_66">
+                                  <label for="extra_66" class="text-center">
+                                    <span class="icon-muebles"></span>
+                                    Ajustar Freno Trasero
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 spa-bot">
+                                <div class="servicio_extra">
+                                  <input type="checkbox" id="extra_1">
+                                  <label for="extra_1" class="text-center">
+                                    <span class="icon-muebles"></span>
+                                    Cambio de Aceite
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 spa-bot">
+                                <div class="servicio_extra">
+                                  <input type="checkbox" id="extra_2">
+                                  <label for="extra_2" class="text-center">
+                                    <span class="icon-muebles"></span>
+                                    Cambio de Filtro de Aceite
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 spa-bot">
+                                <div class="servicio_extra">
+                                  <input type="checkbox" id="extra_3">
+                                  <label for="extra_3" class="text-center">
+                                    <span class="icon-muebles"></span>
+                                    Ajustar Cadena y Lubricar
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 spa-bot">
+                                <div class="servicio_extra">
+                                  <input type="checkbox" id="extra_4">
+                                  <label for="extra_4" class="text-center">
+                                    <span class="icon-muebles"></span>
+                                    Ajustar Freno Trasero
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <h5 class="text-center spa-bot double-line"><strong><span>Aclaraciones</span></strong></h5>
+                            <textarea class="form-control" rows="5"></textarea>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 spa-bot">
+                            
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 spa-bot">
+                                <button type="submit" class="btn btn-warning btn-block">PENDIENTE</button>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 spa-bot">
+                            <button type="submit" class="btn btn-success btn-block">REPARADO</button>
+                            </div>
+                        <div>
+                    </div>
+                    <!-- borrar-->
+    
+                    <!-- ini -->
+                    <!-- fin -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+       {% endblock %}

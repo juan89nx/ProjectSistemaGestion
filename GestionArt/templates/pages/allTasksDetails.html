@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- MetisMenu CSS -->
+ 	<link href="{% static 'bootstrap/metisMenu/metisMenu.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'bootstrap/dist/css/sb-admin-2.css' %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+	<link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!--  <link href="css/styles.css" rel="stylesheet" type="text/css">  -->
+	<link href="{% static 'bootstrap/css/styles.css' %}" rel="stylesheet" type="text/css">
+	
+	<!-- DataTables -->
+	<link href="{% static 'bootstrap/dataTables/css/dataTables.bootstrap4.min.css' %}" rel="stylesheet">
+
+</head>
+
+
+<body onload="show_cant_tareas();" >
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Sistema de Gestión de Clientes</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">            
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <!-- <ul class="dropdown-menu dropdown-user"> -->
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i>Perfil de Usuario</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i>Configuraciones</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <!--
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...1">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            </div>
+                        </li>
+                        -->
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Inicio</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> Mantenimiento de Clientes<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="newClient.html">Nuevo Cliente</a>
+                                </li>
+                                <li>
+                                    <a href="newClient.html">Modificar Cliente</a>
+                                </li>
+                                <li>
+                                    <a href="newClient.html">Eliminar Cliente</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Mantenimiento de Tareas<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="newWork.html">Nueva Tarea</a>
+                                </li>
+                                <li>
+                                    <a href="newWork.html">Modificar Tarea</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+	</div>
+	<div id="page-wrapper">
+			<!-- Search -->	
+            <div class="row">
+                <div class="col-lg-9">
+                    <!-- <h1 class="page-header">Dashboard</h1> -->
+                    <ul class="my-page-header nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" onclick="tables.html">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+		 <div class="row"> </br>  </div>
+		 <div class="row">
+                <div class="col-lg-11 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row" >
+                                <div class="col-xs-2">
+									<div class="col-xs-12">
+										<i class="glyphicon glyphicon-search fa-3x" id="iconTareas"></i>
+									</div>	
+                                </div>
+								<div id= 'estadoTareas' class="col-xs-7"> 
+									<h1>Listado de Tareas</h1> 
+									<div class="btn-group data-multiple="buttons" >
+									  <label class="btn btn-danger">  
+										<i class="glyphicon glyphicon-wrench fa-2x"></i>
+										<input onchange="filterme()" type="checkbox" name="type" value="Pendiente">Pendientes
+									  </label>
+									  <label class="btn btn-warning">
+										<i class="fa fa-tasks fa-2x"></i>
+										<input onchange="filterme()" type="checkbox" name="type" value="En Progreso">En Progreso
+									  </label>
+									  <label class="btn btn-success">
+										<i class="glyphicon glyphicon-check fa-2x"></i>
+										<input onchange="filterme()" type="checkbox" name="type" value="Finalizada">Finalizadas
+									  </label>
+									</div>
+								</div>
+                                <div class="col-xs-3 text-right">
+                                    <div class="huge" id="cant_tareas">                             
+                                   
+                                   							
+                                    </div>
+                                    <div id="filtroTareas">Tareas Mostradas!</div>
+                                </div>
+                            </div>
+                        </div>
+						<div class="panel-body">
+						 <!-- Table -->
+							<table class="table table-hover" id="tablaTareas">
+								<thead>
+									<td><strong>Cliente</strong></td>
+									<td><strong>Vehículo</strong></td>
+									<td><strong>Matrícula</strong></td>								
+									<td><strong>Tarea</strong></td>
+									<td><strong>Estado</strong></td>
+									<td><strong>Descripción</strong></td>
+									<td><strong>Responsable</strong></td>
+								</thead>
+								
+
+								<tbody>
+								{% for task in all_tasks %}
+									<tr>
+										<td><strong><a href="/gestionArt/client/{{task.Vehicle.Client.id}}"> {{ task.Vehicle.Client.nombre }} </a> </strong></td>
+										<td><strong><a href="/gestionArt/vehicle/{{task.Vehicle.id}}"> {{ task.Vehicle.tipo }} </a> </strong></td>
+										<td><strong><a href="/gestionArt/vehicle/{{task.Vehicle.id}}"> {{ task.Vehicle.matricula }} </a></strong></td>
+										<td><strong><a href="/gestionArt/task/{{task.id}}"> {{ task.id}}</a> </strong></td>
+										<td><strong><a href="/gestionArt/task/{{task.id}}">{{task.estado}}</a> </strong></td>
+										<td><strong><a href="/gestionArt/task/{{task.id}}"> {{ task.descripcion }} </a> </strong></td>
+										<td><strong><a href="/gestionArt/task/{{task.id}}"> {{ task.responsable }} </a> </strong></td>
+									</tr>
+									
+								{% endfor %}
+								</tbody>
+
+						  </table>
+						</div>
+                    </div>
+                </div>
+				<div class="col-lg-1 col-md-6">
+					<button type="button" class="btn btn-success btn-lg" data-toggle="tooltip" title="Nueva Tarea">
+						<span class="glyphicon glyphicon-plus" ></span>
+					</button>
+					
+				</div>
+		</div>
+		
+	<!-- jQuery dataTables-->
+	<script src="{% static 'bootstrap/js/jquery-1.12.4.js' %}"></script>
+	<script src="{% static 'bootstrap/js/jquery.dataTables.min.js' %}"></script>
+	<script src="{% static 'bootstrap/js/dataTables.bootstrap4.min.js' %}"></script>
+ 		
+</body>
+
+<script type="text/javascript">
+    $(function () {
+        $("#tablaTareas").DataTable();
+    });
+</script>
+
+
+<script type="text/javascript">
+	$(function() {
+	  otable = $('#tablaTareas').dataTable();
+	})
+
+	function filterme() {
+	  //build a regex filter string with an or(|) condition
+	  var types = $('input:checkbox[name="type"]:checked').map(function() {
+	    return '^' + this.value + '\$';
+	  }).get().join('|');
+	  //filter in column 4, with an regex, no smart filtering, no inputbox,not case sensitive
+	  otable.fnFilter(types, 4, true, false, false, false); 
+	  otable.fnDraw();
+	 
+	  //Setting number of filtered rows into a div
+	   show_cant_tareas();
+	}
+	
+	
+	function show_cant_tareas() {
+		//Setting number of filtered rows in div		
+		document.getElementById('cant_tareas').innerHTML = otable.fnSettings().fnRecordsDisplay();
+	}
+</script>
+
+
+</html>
