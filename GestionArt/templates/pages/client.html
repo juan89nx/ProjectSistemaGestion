@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div class="row" >
                     <div class="col-lg-12">
-                        <h1 class="page-header">Nuevo Cliente</h1>
+                        <h1 class="page-header">Cliente</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                     <!-- <div class="col-lg-10 col-lg-offset-1 spa-top-lg bg-white well"> -->
@@ -20,31 +20,31 @@
                                     <div class="row">
                                         <div class="form-group form-group-lg col-lg-6">
                                           <label for="nombre" class="text-semibold">Nombre</label>
-                                          <input type="text" class="form-control" id="nombre">
+                                          <input type="text" class="form-control" id="nombre" value={{myClient.nombre}}>
                                         </div>
                                         <div class="form-group form-group-lg col-lg-6">
                                           <label for="apellido" class="text-semibold">Apellido</label>
-                                          <input type="text" class="form-control" id="apellido">
+                                          <input type="text" class="form-control" id="apellido" value={{myClient.apellido}}>
                                         </div>
                                     </div>
                                     <div class="row">
                                    	 	<div class="form-group form-group-lg col-lg-6">
                                             <label for="telefono" class="text-semibold">C.I</label>
-                                            <input type="text" class="form-control" id="telefono">
+                                            <input type="text" class="form-control" id="cedula" value={{myClient.cedula}}>
                                         </div>
                                         <div class="form-group form-group-lg col-lg-6">
                                             <label for="fechanac" class="text-semibold" >Fecha de Nacimiento</label>
-                                         <input type="date" class="form-control" id="fechanac">
+                                         <input type="date" class="form-control" id="fechanac" value={{myClient.fecha_de_nacimiento|date:"Y-m-d"}}>
                                         </div>    
                                     </div>
                                      <div class="row">
                                    	 	<div class="form-group form-group-lg col-lg-6">
                                             <label for="telefono" class="text-semibold">Celular</label>
-                                            <input type="text" class="form-control" id="telefono">
+                                            <input type="text" class="form-control" id="celular" value={{myClient.celular}}>
                                         </div>
                                         <div class="form-group form-group-lg col-lg-6">
                                             <label for="text" class="text-semibold" >Telefono Fijo</label>
-                                         <input type="text" class="form-control" id="fechanac">
+                                         <input type="text" class="form-control" id="telefono" value={{myClient.telefono}}>
                                         </div>    
                                     </div>
                                      <div class="row">
@@ -62,19 +62,19 @@
 										</div>
 										<div class="form-group form-group-lg col-lg-6">
 											 <label for="fechacreacion" class="text-semibold" >Fecha de Creacion</label>
-	                                         <input type="date" class="form-control" id="fechacreacion">
+	                                         <input type="date" class="form-control" id="fechacreacion" value={{myClient.fecha_creacion|date:"Y-m-d"}}>
 	                                    </div>    
 									</div>
 									<div class="row">
 										<div class="form-group form-group-lg col-lg-12">
 											<label for="direccion" class="text-semibold">Direccion</label>
-											<input type="text" class="form-control" id="direccion">
+											<input type="text" class="form-control" id="direccion" value="{{myClient.direccion}}">
 										</div>
 									</div>
 									<div class="row">
 										<div class="form-group form-group-lg col-lg-12">
 											<label for="correo" class="text-semibold">Email</label>
-											<input type="email" class="form-control" id="correo">
+											<input type="email" class="form-control" id="correo" value={{myClient.email}}>
 										</div>
 									</div>
                                
