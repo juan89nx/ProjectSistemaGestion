@@ -1,12 +1,15 @@
  
 {% extends "pages/base.html" %}
 
-{% block title %}GestionArt - Arte en Gestion{% endblock %}
+{% block title %}GestionArt - Arte en Gestión{% endblock %}
 {% block content %}
+ <head>
+   <meta charset="utf-8">
+ </head>
             <div class="container-fluid">
                 <div class="row" >
                     <div class="col-lg-12">
-                        <h1 class="page-header">Perfil Vehiculo</h1>
+                        <h1 class="page-header">Perfil Vehículo</h1>
                     </div>
                     <!-- /.col-lg-12 -->
                     <!-- <div class="col-lg-10 col-lg-offset-1 spa-top-lg bg-white well"> -->
@@ -20,51 +23,51 @@
                             				
                                         <div class="form-group form-group-lg col-lg-6">
                                           <label for="nombre" class="text-semibold">Nombre</label>
-                                          <input type="text" class="form-control" id="nombre" disabled>
+                                          <input type="text" class="form-control" id="nombre" disabled value="{{myVehicle.Client.nombre}}"  disabled="disabled">
                                         </div>
                                         <div class="form-group form-group-lg col-lg-6">
                                           <label for="apellido" class="text-semibold">Apellido</label>
-                                          <input type="text" class="form-control" id="apellido" disabled>
+                                          <input type="text" class="form-control" id="apellido" disabled value="{{myVehicle.Client.apellido}}"  disabled="disabled">
                                         </div>
                                     </div>
                                     </br>
                                     <div class="row">
-                                    <h5 class="text-center spa-bot double-line"><strong><span>Datos Vehiculo</span></strong></h5>
+                                    <h5 class="text-center spa-bot double-line"><strong><span>Datos Vehículo</span></strong></h5>
                             		
                                         <div class="form-group form-group-lg col-lg-6">
                                           <label for="nombre" class="text-semibold">Tipo</label>
-                                          <input type="text" class="form-control" id="nombre">
+                                          <input type="text" class="form-control" id="tipo" value="{{myVehicle.tipo}}">
                                         </div>
                                         <div class="form-group form-group-lg col-lg-6">
-                                          <label for="apellido" class="text-semibold">Matricula</label>
-                                          <input type="text" class="form-control" id="apellido">
+                                          <label for="apellido" class="text-semibold">Matrícula</label>
+                                          <input type="text" class="form-control" id="matricula" value="{{myVehicle.matricula}}">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group form-group-lg col-lg-6">
                                             <label for="fechanac" class="text-semibold" >Marca</label>
-                                         <input type="text" class="form-control" id="fechanac">
+                                         <input type="text" class="form-control" id="marca" value="{{myVehicle.marca}}">
                                         </div>
                                         <div class="form-group form-group-lg col-lg-6">
                                             <label for="telefono" class="text-semibold">Modelo</label>
-                                            <input type="text" class="form-control" id="telefono">
+                                            <input type="text" class="form-control" id="modelo" value="{{myVehicle.modelo}}">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group form-group-lg col-lg-6">
-                                            <label for="fechanac" class="text-semibold" >Fecha</label>
-                                         <input type="text" class="form-control" id="fechanac">
+                                            <label for="fechanac" class="text-semibold" >Fecha Fabricación</label>
+                                         <input type="text" class="form-control" id="fechaFab" value={{myVehicle.fecha_fabricacion|date:"Y-m-d"}}>
                                         </div>
                                         <div class="form-group form-group-lg col-lg-6">
                                             <label for="telefono" class="text-semibold">Kilometraje</label>
-                                            <input type="text" class="form-control" id="telefono">
+                                            <input type="text" class="form-control" id="kilometraje"  value="{{myVehicle.kilometraje}}">
                                         </div>
                                     </div>
                                     
                                     <div class="row">
                                         <div class="form-group form-group-lg col-lg-12">
                                            <h5 class="text-center spa-bot double-line"><strong><span>Aclaraciones</span></strong></h5>
-                            				<textarea class="form-control" rows="5"></textarea>
+                            				<textarea class="form-control" rows="5">{{myVehicle.aclaraciones}}</textarea>
                                         </div>
                                     </div>
                                     
@@ -99,7 +102,14 @@
                         </form>
                    
              
-                    <button type="submit" class="btn btn-success btn-block">GUARDAR</button>
+                    <div class="row">
+                    	<div class="form-group form-group-lg col-lg-6">
+                    		<button type="submit" class="btn btn-success btn-block">GUARDAR</button>
+                    	</div>
+                    	<div class="form-group form-group-lg col-lg-6">
+                    		<button type="submit" class="btn btn-danger btn-block">Eliminar</button>	
+                    	</div>
+             		</div>
                          </div>          
                        </div>
                 <!-- /.row -->

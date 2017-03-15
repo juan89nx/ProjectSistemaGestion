@@ -30,6 +30,7 @@ def newVehicle (request):
 
 def vehicle (request, vehicle_id):
     myVehicle = Vehicle.objects.get(id=vehicle_id)
+    print(myVehicle)
     context = {
         'myVehicle': myVehicle,
     } 
@@ -69,6 +70,10 @@ def allTasksDetails(request):
         'all_tasks': all_tasks,
     }    
     return render(request, 'pages/allTasksDetails.html', context)
+
 def allTareasViejo(request):
-  return render(request, 'pages/allTareasViejo.html', {})
+    return render(request, 'pages/allTareasViejo.html', {})
    
+def index(request):
+    return render(request, 'pages/homeViejo.html', {})
+

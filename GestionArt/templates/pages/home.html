@@ -1,64 +1,22 @@
  
 {% extends "pages/base.html" %}
 
-{% block title %}GestionArt - Arte en Gestion{% endblock %}
- {% block modal %}
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h2 style="color:darkblue;" class="modal-title">Resultados de Busqueda</h2>
-      </div>
-      <div class="modal-body">
-         
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-       
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-       
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        
-      </tr>
-    </tbody>
-  </table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-
-  </div>
-</div>
-{% endblock %}
+{% block title %}GestionArt - Arte en Gestión{% endblock %}block %}
+ 
  {% block content %}
+ <head>
+   <meta charset="utf-8">
+ </head>
+ 
             <div class="row">
                 <div class="col-lg-9">
                     <!-- <h1 class="page-header">Dashboard</h1> -->
                     <ul class="my-page-header nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Buscar...">
+                                <input type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
-                                <button class="btn btn-default" type="button" data-toggle="modal" data-target="#myModal">
+                                <button class="btn btn-default" type="button" onclick="tables.html">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </span>
@@ -68,24 +26,7 @@
                     </ul>
                 </div>
                 <!-- /.col-lg-12 -->
-                
-                <div class="col-lg-1 ">
-                <ul class="my-page-header nav" id="side-menu">
-                 <a href="/newClient/" class="button btn btn-default btn-block glyphicon glyphicon-user"></a>
-                </ul>
-                </div>
-                <div class="col-lg-1 ">
-                <ul class="my-page-header nav" id="side-menu">
-                 <a href="/newVehicle/" class="button btn btn-default glyphicon glyphicon-road btn-block"></a>
-                </ul>
-                </div>
-                <div class="col-lg-1 ">
-                <ul class="my-page-header nav" id="side-menu">
-                  <a href="/newWork/" class="button btn btn-default glyphicon glyphicon-wrench btn-block"></a>
-                </ul>
-                </div>
             </div>
-            </br>
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-4 col-md-6">
@@ -93,17 +34,39 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-comments fa-5x"></i>
+                                    <i class="glyphicon glyphicon-wrench fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">26</div>
-                                    <div>New Comments!</div>
+                                    <div>Tareas Pendientes!</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="/gestionArt/task/taskList/">
                             <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
+                                <span class="pull-left">Ver Detalles</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-tasks fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">12</div>
+                                    <div>Tareas en Progreso!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/gestionArt/task/taskList/">
+                            <div class="panel-footer">
+                                <span class="pull-left">Ver Detalles</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -115,76 +78,73 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-tasks fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">12</div>
-                                    <div>Tareas Nuevas!</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="/detailsWork/">
-                            <div class="panel-footer">
-                                <span class="pull-left">Ver</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="panel panel-red">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-support fa-5x"></i>
+                                    <i class="glyphicon glyphicon-check fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">13</div>
-                                    <div>Tareas Pendientes!</div>
+                                    <div>Tareas Finalizadas!</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="/detailsWork/">
+                        <a href="/gestionArt/task/taskList/">
                             <div class="panel-footer">
-                                <span class="pull-left">Ver</span>
+                                <span class="pull-left">Ver Detalles</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
                         </a>
                     </div>
-                </div>
-            </div>
-            <!-- /.row -->
-            
-            
-  <h2>Nuevas Tareas</h2>
-  <p>Tareas agregadas en las ultimas 24 hs</p>            
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Tarea</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>Cambio de Aceite</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>Service 1</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>Cambiar luz freno</td>
-      </tr>
-    </tbody>
-  </table>
+                </div> 
+			<!-- /.row -->			
+			<div class="row">
+			
+				<!-- .Grafica <div class="col-lg-6 col-md-6">	-->	
+				<!-- /.Grafica </div>-->	
+			
+				
+				<div class="col-lg-12 col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bell fa-fw"></i> Panel de Notificaciones
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-comment fa-fw"></i> Tarea: Desarme Moto Suzuki - Comenzada                                    <span class="pull-right text-muted small"><em> 5 minutes atrás</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-twitter fa-fw"></i> Tarea: Cambio Aceite Fiat Uno - Finalizada
+                                    <span class="pull-right text-muted small"><em>12 minutos atrás</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-tasks fa-fw"></i> Nueva Tarea Ingresada - Desarme de Motor
+                                    <span class="pull-right text-muted small"><em>43 minutos atrás</em>
+                                    </span>
+                                </a>                                             
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-shopping-cart fa-fw"></i> New Order Placed
+                                    <span class="pull-right text-muted small"><em>9:49 AM</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-money fa-fw"></i> Pago Recibido - Cliente Juan Pérez
+                                    <span class="pull-right text-muted small"><em>Ayer</em>
+                                    </span>
+                                </a>
+                            </div>
+                            <!-- /.list-group -->
+                            <a href="#" class="btn btn-default btn-block">Ver Todas las Alertas</a>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+            </div>			
+			<!-- /.row -->
+ 
 
-       {% endblock %}
+	{% endblock %}
+
+
+

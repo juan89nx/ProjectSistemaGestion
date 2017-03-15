@@ -1,8 +1,11 @@
  
 {% extends "pages/base.html" %}
 
-{% block title %}GestionArt - Arte en Gestion{% endblock %}
+{% block title %}GestionArt - Arte en Gestión{% endblock %}
 {% block content %}
+ <head>
+   <meta charset="utf-8">
+ </head>
 <meta charset="utf-8">
             <div class="container-fluid">
                 <div class="row">
@@ -15,43 +18,22 @@
                             <div class="row spa-bot-lg">
                             <!-- <div class="col-lg-offset-2 col-lg-8"> -->
                                 <div class="col-lg-12">
-                                    <h4 class="text-uppercase"><strong>Informacion del Cliente</strong></h4>
+                                    <h4 class="text-uppercase"><strong>Información del Cliente</strong></h4>
                                     <div class="row">
                                         <div class="form-group form-group-lg col-lg-4">
                                           <label for="nombre" class="text-semibold">Nombre</label>
-                                          <input type="text" class="form-control" id="nombre">
+                                          <input type="text" class="form-control" id="nombre" value="{{myTask.Vehicle.Client.nombre}}"  disabled="disabled">
                                         </div>
                                         <div class="form-group form-group-lg col-lg-4">
                                           <label for="apellido" class="text-semibold">Apellido</label>
-                                          <input type="text" class="form-control" id="apellido">
+                                          <input type="text" class="form-control" id="apellido" value="{{myTask.Vehicle.Client.apellido}}"  disabled="disabled">
                                         </div>
                                         <div class="form-group form-group-lg col-lg-4">                                              
-									        <label for="apellido" class="text-semibold">Matricula Vehiculo</label>
-									        <input type="text" class="form-control" id="Matricula">
+									        <label for="apellido" class="text-semibold">Matrícula Vehículo</label>
+									        <input type="text" class="form-control" id="Matricula" value="{{myTask.Vehicle.matricula}}"  disabled="disabled">
                                         </div>
                                          
-                                    </div>
-                                    <!--  <div class="row">
-                                        <div class="form-group form-group-lg col-lg-6">
-                                            <label for="fechanac" class="text-semibold">Fecha de Nacimiento</label>
-                                            <input type="text" class="form-control" id="fechanac">
-                                        </div>
-                                        <div class="form-group form-group-lg col-lg-6">
-                                            <label for="telefono" class="text-semibold">Tel�fono</label>
-                                            <input type="text" class="form-control" id="telefono">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group form-group-lg col-lg-6">
-                                            <label for="direccion" class="text-semibold">Direcci�n</label>
-                                            <input type="text" class="form-control" id="direccion">
-                                        </div>
-                                        <div class="form-group form-group-lg col-lg-6">
-                                            <label for="correo" class="text-semibold">Email</label>
-                                            <input type="text" class="form-control" id="correo">
-                                        </div>
-                                    </div>
-                                </div>-->
+                                    </div>                                 
                             </div>
                          
                         </form>
@@ -233,14 +215,17 @@
                         </div>
                         
                         <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 spa-bot">
-                            
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 spa-bot">
+                            	 <button type="submit" class="btn btn-danger btn-block">Eliminar</button>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 spa-bot">
-                                <button type="submit" class="btn btn-warning btn-block">PENDIENTE</button>
+                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 spa-bot">
+                                <button type="submit" class="btn btn-primary btn-block">Pendiente</button>
                             </div>
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 spa-bot">
-                            <button type="submit" class="btn btn-success btn-block">REPARADO</button>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 spa-bot">
+                                <button type="submit" class="btn btn-warning btn-block">En Progreso</button>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 spa-bot">
+                            	<button type="submit" class="btn btn-success btn-block">Finalizar</button>
                             </div>
                         <div>
                     </div>

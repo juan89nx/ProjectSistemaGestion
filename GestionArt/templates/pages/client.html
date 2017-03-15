@@ -1,10 +1,13 @@
  
 {% extends "pages/base.html" %}
 
-{% block title %}GestionArt - Arte en Gestion{% endblock %}
+{% block title %}GestionArt - Arte en Gestión{% endblock %}
 
 
  {% block content %}
+ <head>
+   <meta charset="utf-8">
+ </head>
             <div class="container-fluid">
                 <div class="row" >
                     <div class="col-lg-12">
@@ -43,7 +46,7 @@
                                             <input type="text" class="form-control" id="celular" value={{myClient.celular}}>
                                         </div>
                                         <div class="form-group form-group-lg col-lg-6">
-                                            <label for="text" class="text-semibold" >Telefono Fijo</label>
+                                            <label for="text" class="text-semibold" >Teléfono Fijo</label>
                                          <input type="text" class="form-control" id="telefono" value={{myClient.telefono}}>
                                         </div>    
                                     </div>
@@ -61,13 +64,13 @@
 											</div>
 										</div>
 										<div class="form-group form-group-lg col-lg-6">
-											 <label for="fechacreacion" class="text-semibold" >Fecha de Creacion</label>
+											 <label for="fechacreacion" class="text-semibold" >Fecha de Creación</label>
 	                                         <input type="date" class="form-control" id="fechacreacion" value={{myClient.fecha_creacion|date:"Y-m-d"}}>
 	                                    </div>    
 									</div>
 									<div class="row">
 										<div class="form-group form-group-lg col-lg-12">
-											<label for="direccion" class="text-semibold">Direccion</label>
+											<label for="direccion" class="text-semibold">Dirección</label>
 											<input type="text" class="form-control" id="direccion" value="{{myClient.direccion}}">
 										</div>
 									</div>
@@ -79,15 +82,15 @@
 									</div>
                                
                                <!-- ###################Aca comienza la tabla ###########################################-->    
-                                 <h5 class="text-center spa-bot double-line"><strong><span>Vehiculos</span></strong></h5>
+                                 <h5 class="text-center spa-bot double-line"><strong><span>Vehículos</span></strong></h5>
                             		
                                     <div class="panel panel-info">
-									  <div class="panel-heading"> <a><i class="glyphicon glyphicon-road"></i> Vehiculos</a></div>
+									  <div class="panel-heading"> <a><i class="glyphicon glyphicon-road"></i> Vehículos</a></div>
 									  
 									  <div class="panel-body"><table class="table table-bordered">
 									    <thead>
 									      <tr>
-									        <th>Matricula</th>
+									        <th>Matrícula</th>
 									        <th>Modelo</th>
 									        
 									      </tr>
@@ -108,8 +111,15 @@
                             </div>
                         </form>
                    
-             
-                    <button type="submit" class="btn btn-success btn-block">GUARDAR</button>
+             		<div class="row">
+                    	<div class="form-group form-group-lg col-lg-6">
+                    		<button type="submit" class="btn btn-success btn-block">GUARDAR</button>
+                    	</div>
+                    	<div class="form-group form-group-lg col-lg-6">
+                    		<button type="submit" class="btn btn-danger btn-block">Eliminar</button>	
+                    	</div>
+             		</div>
+                    
                          </div>          
                        </div>
                 <!-- /.row -->

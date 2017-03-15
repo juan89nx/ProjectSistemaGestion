@@ -1,9 +1,12 @@
  
 {% extends "pages/base.html" %}
 
-{% block title %}GestionArt - Arte en Gestion{% endblock %}
+{% block title %}GestionArt - Arte en Gestión{% endblock %}
  
  {% block content %}
+  <head>
+   <meta charset="utf-8">
+ </head>
 			<!-- Search -->	
             <div class="row">
                 <div class="col-lg-9">
@@ -42,7 +45,7 @@
 								</div>
                                 <div class="col-xs-3 text-right">
                                     <div class="huge">26</div>
-                                    <div id="filtroTareas">Tareas Mostradas!</div>
+                                    <div id="filtroTareas">Clientes Mostrados!</div>
                                 </div>
                             </div>
                         </div>
@@ -51,11 +54,11 @@
 							<table class="table table-hover" id="tablaTareas" .pagination>
 								<thead>
 									<td><strong>Cliente</strong></td>
-									<td><strong>Vehiculo</strong></td>
-									<td><strong>Matricula</strong></td>								
+									<td><strong>Vehículo</strong></td>
+									<td><strong>Matrícula</strong></td>								
 									<td><strong>Tarea</strong></td>
 									<td><strong>Estado</strong></td>
-									<td><strong>Descripcion</strong></td>
+									<td><strong>Descripción</strong></td>
 									<td><strong>Responsable</strong></td>
 								</thead>
 								<tbody>

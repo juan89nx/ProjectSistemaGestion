@@ -1,8 +1,7 @@
 from django.conf.urls import url, patterns
 from . import views
 
-urlpatterns = patterns('',
-                       
+urlpatterns = patterns('',             
     # Examples:
     # url(r'^$', 'ProjectSistemaGestion.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
@@ -23,7 +22,7 @@ urlpatterns = patterns('',
     url(r'^vehicle/newVehicle', views.newVehicle, name = 'New Vehicle'),
     
     #GestionArt/vehicle/[vehicleID] 
-    url(r'^vehicle/(?P<client_id>[0-9]+)$', views.vehicle, name = 'Vehicle'),
+    url(r'^vehicle/(?P<vehicle_id>[0-9]+)$', views.vehicle, name = 'Vehicle'),
     
     #GestionArt/client/vehicleList
     url(r'^vehicle/vehicleList', views.vehicleList, name = 'Vehicle List'),
@@ -37,7 +36,7 @@ urlpatterns = patterns('',
     #GestionArt/task/taskList
     url(r'^task/taskList', views.taskList, name = 'Task List'),
     
-    
+    url(r'^index', views.index, name = 'index'),
     url(r'^allTaskDetails', views.allTasksDetails, name = 'allTaskDetails'),
     url(r'^allTareasViejo', views.allTareasViejo, name = 'allTareasViejo'),
 
